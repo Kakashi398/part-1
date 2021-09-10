@@ -3,7 +3,7 @@ import React from 'react'
 const Header =(props) => {
   return(
     <>
-    {props.course}
+    <h1>{props.course}</h1>
     </>
   )
 }
@@ -35,8 +35,9 @@ const Total = (props) => {
 }
 
 const App =() => {
-  const course = 'Half Stack application development'
-    const parts =[
+  const course = {
+    name: 'Half Stack application development',
+     parts: [
 
       {
         name: 'Fundamentals of React',
@@ -53,17 +54,18 @@ const App =() => {
         exercises: 14 
       }
     ]
+  }
   
   
    
 
   return(
    <div>
-     <Header course={<h1>{course}</h1>} />
+     <Header course={course.name} />
      
-    <Content parts= {parts}/>
+    <Content parts= {course.parts}/>
      
-    <Total parts={parts} />
+    <Total parts={course.parts} />
 
    
    
